@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile /mnt/web110/d2/53/511833653/htdocs/anmelden/.htpasswd
+require valid-user
