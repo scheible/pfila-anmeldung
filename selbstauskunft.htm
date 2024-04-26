@@ -35,6 +35,10 @@
 			if (errorNumber > 0) {
 				alert("Bitte alle Felder ausfüllen");
 				event.preventDefault();
+			} else {
+				if (!confirm("Selbstauskunft wirklich bestätigen für " + $('#vorname').val() + " " + $('#nachname').val())) {
+					event.preventDefault();
+				}
 			}
 		}
 	</script>
