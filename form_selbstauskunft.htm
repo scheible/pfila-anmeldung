@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script> 
+	<script type="text/javascript" src="verify.js"></script>
+	<link rel="stylesheet" href="selbstauskunft.css">
+</head>
+
+<body>
+	<form action = "selbstauskunft.php" method = "POST">
+
+		<input type="text" hidden="true" name="action" value="<?php echo $action; ?>" >
+
+		<h1>Selbst&shy;auskunfts&shy;erklärung</h1>
+
+		<div class="formBlock">
+			<input type="text" placeholder="Nachname" name="nachname" id="nachname" />
+			<input type="text" placeholder="Vorname" name="vorname" id="vorname" />
+		</div>
+
+		<div class="formBlock">
+			<input type="text" placeholder="Anschrift" name="anschrift" id="anschrift" />
+			<input type="text" placeholder="Geburtsdatum" name="geburtstag" id="geburtstag" />
+		</div>
+
+		<div class=formBlock>
+			<input type="text" placeholder="Funktion in der DPSG" name="funktion_in_dpsg" id="funktion_in_dpsg" />
+			<div class="checkboxes">
+				<input type="checkbox" /><label>Stamm</label><br />
+				<input type="checkbox" /><label>Bezirk</label><br />
+				<input type="checkbox" /><label>Diözese</label><br />
+			</div>
+		</div>
+
+		<p>Hiermit versichere ich, dass ich nicht wegen einer Straftat im Zusammenhang mit sexualisierter Gewalt* rechtskräftig verurteilt worden bin und auch insoweit kein Ermittlungsverfahren gegen mich eingeleitet worden ist.</p>
+
+		<p>Für den Fall, dass dies bezüglich ein Ermittlungsverfahren gegen mich eingeleitet wird, verpflichte ich mich, dies dem Träger umgehend mitzuteilen.</p>
+
+		<p>Diese Selbstauskunftserklärung ist nur für spontane ehrenamtliche Einsätze gedacht. Sie ersetzt keinesfalls auf Dauer die Einsichtnahme in ein erweitertes Führungszeugnis!</p>
+				
+		
+		<div style="text-align: center;">
+			<input type="submit" id="submitButton" value="Selbstauskunft bestätigen"/>
+		</div>
+
+
+		<div class="paragaphfooter">
+			*§§ 171, 174 bis 174c, 176 bis 180a, 181a, 182 bis 184f, 225, 232 bis 233a, 234 oder 236 StGB
+		</div>
+
+
+
+		
+	</form>
+	<div class="bottomInfo">
+		Das Formular wird verschlüsselt übertragen.
+	</div>
+</body>
+</html>
