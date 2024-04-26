@@ -6,6 +6,38 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script> 
 	<script type="text/javascript" src="verify.js"></script>
 	<link rel="stylesheet" href="selbstauskunft.css">
+
+	<script>
+		function checkForm(event) {
+			let errorNumber = 0;
+
+			if ($('#nachname').val() === "") {
+				errorNumber++;
+			}
+
+			if ($('#vorname').val() === "") {
+				errorNumber++;
+			}
+
+			if ($('#anschrift').val() === "") {
+				errorNumber++;
+			}
+
+			if ($('#geburtstag').val() === "") {
+				errorNumber++;
+			}
+
+			if ($('#funktion_in_dpsg').val() === "") {
+				errorNumber++;
+			}
+
+	
+			if (errorNumber > 0) {
+				alert("Bitte alle Felder ausfüllen");
+				event.preventDefault();
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -28,9 +60,9 @@
 		<div class=formBlock>
 			<input type="text" placeholder="Funktion in der DPSG" name="funktion_in_dpsg" id="funktion_in_dpsg" />
 			<div class="checkboxes">
-				<input type="checkbox" /><label>Stamm</label><br />
-				<input type="checkbox" /><label>Bezirk</label><br />
-				<input type="checkbox" /><label>Diözese</label><br />
+				<input type="checkbox" name="stamm" value="x" /><label>Stamm</label><br />
+				<input type="checkbox" name="bezirk" value="x" /><label>Bezirk</label><br />
+				<input type="checkbox" name="dioezese" value="x" /><label>Diözese</label><br />
 			</div>
 		</div>
 
@@ -42,7 +74,7 @@
 				
 		
 		<div style="text-align: center;">
-			<input type="submit" id="submitButton" value="Selbstauskunft bestätigen"/>
+			<input type="submit" id="submitButton" value="Selbstauskunft bestätigen" onclick="checkForm(event);"/>
 		</div>
 
 
