@@ -46,6 +46,30 @@
 	$place     = getParameter('ort');
 	$expire    = getParameter('anmend');
 
+
+	$formblockMap = array(
+		"form_data/name.php",
+		"form_data/gesundheitsinformationen.php",
+		"form_data/name.php",
+		"form_data/gesundheitsinformationen.php",
+		"form_data/medizinischer_kontext.php",
+		"form_data/unvertraeglichkeit_und_allergien.php",
+		"form_data/schwimmfaehigkeit.php",
+		"form_data/ernaehrungsgewohnheiten.php",
+		"form_data/kontaktdaten.php",
+		"form_data/transportfaehigkeit.php",
+		"form_data/zahlungsinformationen.php"
+	);
+	$formBlocks = explode(",", getParameter('formblocks'));
+	$parsedFormblocks = [];
+	foreach($formBlocks as $block) {
+		if (ctype_digit($block)) {
+			if (intval($block) < count($formblockMap)) {
+				array_push($parsedFormblocks, intval($block));
+			}
+		}
+	}
+
 	if (strtotime(date('Y-m-d')) > strtotime($expire) || $expire == "") {
 		include("toolate.php");
 	} else {
