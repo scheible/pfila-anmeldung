@@ -42,8 +42,8 @@
 
 	<div class="formGroup">
 		<div class="groudHeading">Besondere Krankheit, auf die zu achten, oder Medikamente, die regelmäßig einzunehmen sind?</div>
-		<input type="checkbox" name="illnessNo" id="illnessNo" value="x" /> Nein<br>
-		<input type="checkbox" name="illnessYes" id="illnessYes" value="x" /> Ja, nämlich<br>
+		<input type="radio" name="illness" id="illnessNo" value="x" /> Nein<br>
+		<input type="radio" name="illness" id="illnessYes" value="x" /> Ja, nämlich<br>
 		<textarea name="illnessInfo" id="illnessInfo" placeholder="info"></textarea>
 	</div>
 
@@ -70,15 +70,15 @@
 
 	<div class="formGroup">
 		<div class="groudHeading"><span class="nameKind">der Teilnehmer</span> hat Lebensmittelunverträglichkeiten oder Allergien</div>
-		<input type="checkbox" name="allergyNo" id="allergyNo" value="x" /> Nein<br>
-		<input type="checkbox" name="allergyYes" id="allergyYes" value="x" /> Ja, nämlich<br>
+		<input type="radio" name="allergy" id="allergyNo" value="x" /> Nein<br>
+		<input type="radio" name="allergy" id="allergyYes" value="x" /> Ja, nämlich<br>
 		<textarea name="allergyInfo" id="allergyInfo" placeholder="info"></textarea>
 	</div>
 
 	<div class="formGroup">
 		<div class="groudHeading">Kann <span class="nameKind">der Teilnehmer</span> ohne besondere Aufsicht schwimmen?</div>
-		<input type="checkbox" name="swimYes" id="swimYes" value="x" />Ja<br>
-		<input type="checkbox" name="swimNo" id="swimNo" value="x" />Nein<br>
+		<input type="radio" name="swim" id="swimYes" value="x" />Ja<br>
+		<input type="radio" name="swim" id="swimNo" value="x" />Nein<br>
 	</div>
 
 	<div class="formGroup">
