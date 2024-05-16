@@ -21,43 +21,22 @@
 			Nach der Anmeldung erhälst du eine Bestätigung per E-Mail. Solltest du keine Bestätigung erhalten oder sonstige Probleme auftreten, wende dich gerne an anmelden@dpsg-deggingen.de oder direkt an die Gruppenleiter. Eingegebene Daten kannst du nach dem Abschicken nicht mehr ändern. In dem Fall bitte die Anmeldung nochmal ausfüllen und eine Bemerkung eintragen. 
 		</p>
 	</div>
+	
+	<?php
+	
 
-	<div class="formGroup">
-		<?php include("form_data/name.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/gesundheitsinformationen.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/medizinischer_kontext.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/unvertraeglichkeit_und_allergien.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/schwimmfaehigkeit.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/ernaehrungsgewohnheiten.php"); ?>
-	</div>
+	
+	foreach($parsedFormblocks as $blockIndex) {
+		echo '<div class="formGroup">';
+		
+		include($formblockMap[$blockIndex]);
+		
+		echo '</div>';
+	}
+	
+	?>
 
 
-	<div class="formGroup">
-		<?php include("form_data/kontaktdaten.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/transportfaehigkeit.php"); ?>
-	</div>
-
-	<div class="formGroup">
-		<?php include("form_data/zahlungsinformationen.php"); ?>
-	</div>
 
 	<div class="formGroup">
 		<p>
