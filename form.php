@@ -23,91 +23,40 @@
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading">Name des Teilnehmers oder der Teilnehmerin</div>
-		<input type="text" placeholder="Vorname Nachname Kind" name="kind" id="kind" onchange="insertName(event);"/><br>
-		<div>
-			<p onclick="$('#infoMultiKids').show();">Mehrere Kinder Anmelden?</p>
-			<p id="infoMultiKids" style="display:none;">Für jedes Kind muss das Formular neu ausgefüllt werden. Nach Abschicken der Anmeldung kann über die Zurückfunktion des Browser das Formular mit den bereits eingtragenen Daten erneut geöffnet und die Daten für das nächste Kind geändert werden.</p>
-		</div>
+		<?php include("form_data/name.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading">Besondere Krankheit, auf die zu achten, oder Medikamente, die regelmäßig einzunehmen sind?</div>
-		<input type="checkbox" name="illnessNo" id="illnessNo" value="x"/> Nein<br>
-		<input type="checkbox" name="illnessYes" id="illnessYes" value="x"/> Ja, nämlich<br>
-		<textarea name="illnessInfo" id="illnessInfo" placeholder="info"></textarea>
+		<?php include("form_data/gesundheitsinformationen.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading">Wichtig! Bitte aufmerksam durchlesen!</div>
-		<p>Da es uns aus rechtlichen Gründen nicht gestattet ist, Eurem Kind Medikamente zu verabreichen, bitten wir Euch, die für Euer Kind notwendigen Medikamente einnahmefertig und mit Namen beschriftet beim jeweiligen Betreuer abzugeben, der Euer Kind auf die Einnahme hinweisen wird. Schließlich zwingt uns die Rechtslage dazu, euer Einverständnis für kleinere medizinische Hilfen durch unsere Betreuer zu bitten. Natürlich werden wir bei Verletzungen, die wir nicht einschätzen können oder bei Verschlechterung des Allgemeinzustandes einen Arzt aufsuchen und Euch ggf. informieren.</p>
-
-		<p>ich bin damit einverstanden, dass (bei) meinem Kind: (bitte zutreffendes ankreuzen)</p>
-
-		<input type="checkbox" name="pflaster" id="pflaster" value="x"/>bei kleineren Verletzungen oder Schürfwunden ein Pflaster verabreicht wird<br>
-		<input type="checkbox" name="pflasterAllergie" id="pflasterAllergie" value="x"/>mein Kind hat eine Pflasterallergie<br>
-		<input type="checkbox" name="bepanthen" id="bepanthen" value="x"/>kleinere Wunden oder Verletzungen mit einem Desinfektionsspray oder Salbe (Bepanthen o. ä.) behandelt werden<br>
-		<input type="checkbox" name="zecken" id="zecken" value="x"/>Zecken mit einer Zeckenzange/-karte entfernt werden<br>
-		<input type="checkbox" name="zeckenArzt" id="zeckenArzt" value="x"/>Entfernung nur durch einen Arzt gewünscht<br>
-		<input type="checkbox" name="wespenstich" id="wespenstich" value="x"/>bei Mücken- oder Wespenstichen eine entsprechende Salbe (Fenistil o.ä.) verabreicht wird <br>
-		<input type="checkbox" name="spreisel" id="spreisel" value="x"/>kleinere Fremdkörper (z.B. Spreißel) mit einer Pinzette entfernt werden dürfen<br>
-
-		Datum der letzten Impfung gegen Tetanus
-		<input type="text" placeholder="Datum" name="tetanus" id="tetanus" /><br />
-
-		<p>Was noch im Umgang mit meinem Kind beachtet werden muss bitte im Bemerkungsfeld unten angeben.</p> 
-		
+		<?php include("form_data/medizinischer_kontext.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading"><span class="nameKind">der Teilnehmer</span> hat Lebensmittelunverträglichkeiten oder Allergien</div>
-		<input type="checkbox" name="allergyNo" id="allergyNo" value="x"/> Nein<br>
-		<input type="checkbox" name="allergyYes" id="allergyYes" value="x"/> Ja, nämlich<br>
-		<textarea name="allergyInfo" id="allergyInfo" placeholder="info"></textarea>
+		<?php include("form_data/unvertraeglichkeit_und_allergien.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading">Kann <span class="nameKind">der Teilnehmer</span> ohne besondere Aufsicht schwimmen?</div>
-		<input type="checkbox" name="swimYes" id="swimYes" value="x"/>Ja<br>
-		<input type="checkbox" name="swimNo" id="swimNo" value="x"/>Nein<br>
+		<?php include("form_data/schwimmfaehigkeit.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading"><span class="nameKind">der Teilnehmer</span> ist</div>
-		<input type="checkbox" name="vegetarian" value="x"/>Vegetarier/in<br>
-		<input type="checkbox" name="vegan" value="x"/>Veganer/in<br>
+		<?php include("form_data/ernaehrungsgewohnheiten.php"); ?>
 	</div>
 
 
 	<div class="formGroup">
-		<div class="groudHeading">Kontaktdaten, unter der die Erziehungsberechtigten während der Freizeit zu erreichen sind. Rover und Leiter bitte eigene E-Mail Adresse angeben.</div>
-		<input type="text" placeholder="Telefon" name="phone" id="phone" /><br />
-		<input type="text" placeholder="Mobiltelefon" name="mobile" id="mobile" /><br />
-		<input type="text" placeholder="E-Mail" name="email" id="email" /><br />
+		<?php include("form_data/kontaktdaten.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading">Ich kann fahren am</div>
-		<input type="checkbox" name="theretripYes" id="theretripYes" value="x"/> <?php echo $startDate; ?> Freie Plätze <input type="number" min="1" name="theretripCount" id="theretripCount"><br>
-		<input type="checkbox" name="returnTripYes" id="returntripYes" value="x"/> <?php echo $endDate; ?> Freie Plätze <input type="number" min="1" id="returntripCount"><br>
-		<p>
-			Bitte die eigenen Kinder <i>nicht</i> von den freien Plätzen abziehen. Natürlich weisen wir eure Kinder keinem anderen Fahrzeug zu, falls ihr selbst fahrt.
-		</p>
+		<?php include("form_data/transportfaehigkeit.php"); ?>
 	</div>
 
 	<div class="formGroup">
-		<div class="groudHeading">Kontodaten</div>
-		<p>Den Teilnehmerbeitrag und die Getränkekosten von folgendem Konto einziehen</p>
-		<input type="text" placeholder="Kontoinhaber" name="accountHolder" id="accountHolder" /><br />
-		<input type="text" placeholder="Institut" name="institute" /><br>
-		<input type="text" placeholder="IBAN" size="45" name="iban" id="iban" /><br>
-		<input type="text" placeholder="BIC" name="bic" />
-	</div>
-
-	<div class="formGroup">
-		<div class="groudHeading">Bemerkungen</div>
-		<p>Weitere Bemerkungen</p>
-		<textarea name="freieBemerkung" id="freieBemerkung" placeholder="Freier Text"></textarea>
+		<?php include("form_data/zahlungsinformationen.php"); ?>
 	</div>
 
 	<div class="formGroup">
