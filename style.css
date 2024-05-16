@@ -24,7 +24,7 @@ body {
 	padding: 1em;
 	max-width: 400px;
 }
-.formGroup input[type="checkbox"] {
+.formGroup input[type="checkbox"], input[type="radio"] {
 	margin-top:  1em;
 	margin-bottom:  1em;
 }
