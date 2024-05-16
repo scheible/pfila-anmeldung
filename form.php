@@ -11,9 +11,9 @@
 
 		<p><b>Kosten</b></br>
 			<table>
-			<tr><td>Erstes Kind:</td><td><?php echo $kostenKind; ?> EUR</td></tr>
-			<tr><td>Weiteres Kind:</td><td> <?php echo $kostenWeiteresKind; ?> EUR</td></tr>
-			<tr><td>Rover/Leiter:</td><td> <?php echo $kostenLeiter; ?> EUR</td></tr>
+			<tr><td>Erstes Kind:</td><td><?php echo number_format(floatval(str_replace(',', '.', $kostenKind)), 2, ',', ''); ?> EUR</td></tr>
+			<tr><td>Weiteres Kind:</td><td> <?php echo number_format(floatval(str_replace(',', '.' , $kostenWeiteresKind)), 2, ',', ''); ?> EUR</td></tr>
+			<tr><td>Rover/Leiter:</td><td> <?php echo number_format(floatval(str_replace(',', '.' , $kostenLeiter)), 2, ',', ''); ?> EUR</td></tr>
 			</table>
 		</p>
 
