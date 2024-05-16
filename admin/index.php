@@ -36,6 +36,8 @@
 
 			<label>Kosten Rover/Leiter</label>
 			<input type="text" id="kostenLeiter" name="kostenLeiter" placeholder="zB 50,20 (eingeben ohne EUR am Ende)" ><br><br>
+			
+			<input type="hidden" name="formblocks" value="1,2,3,4,5,6,7,8,9,10" />
 
 			<input type="submit" value="Link generieren" >
 		</div>
