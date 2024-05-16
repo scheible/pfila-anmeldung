@@ -45,3 +45,6 @@ label {
 	display:  block;
 	margin-top:  1em;
 }
+.error {
+	border: 2px solid red !important;
+}

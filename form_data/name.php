@@ -1,4 +1,4 @@
-<div class="formGroupe">
+<div class="formGroupe" id="kindname">
     <div class="groudHeading">Name des Teilnehmers oder der Teilnehmerin</div>
     <input type="text" placeholder="Vorname Nachname Kind" name="kind" id="kind" onchange="insertName(event);"/><br>
     <div>
