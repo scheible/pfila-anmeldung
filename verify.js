@@ -1,13 +1,51 @@
+
+// Each forms block can register a javascript function that checks the input
+// of the form block for consistency. If no error is encountered, the function
+// shall return "" otherwise it shall return an error message as string
+
+const verifyCallbackList = [];
+
+function registerVerifyCallback($verifyCallback) {
+	verifyCallbackList.push($verifyCallback);
+}
+
 function checkForm(event) {
-	let errorMessage = "Mögliche Fehler im Formular:\n";
+	let errorMessageList = "Mögliche Fehler im Formular:\n";
 	let errorNumber = 0;
 
-	if ($('#kind').val() === "") {
-		errorMessage += ("- Es wurde kein Kind eingetragen\n");
-		errorNumber++;
-		setRed('kindname')
-		setRed('kind')
+	for (var i=0;i<verifyCallbackList.length ; i++) {
+		errorMessage = verifyCallbackList[i]();
+		if (errorMessage !== "") {
+			errorMessageList += errorMessage;
+			errorNumber++;
+		}
 	}
+
+	errorMessageList += ("\nAnmeldung trotzdem absenden?\n");
+
+	if (errorNumber > 0) {
+		if (!confirm(errorMessageList))
+			event.preventDefault();
+	}
+}
+
+// --------------------------------------------------------------
+// Register the verify callbacks for each form block
+// --> later move this code into the form block files
+function kindCheckForErrors() {
+	if ($('#kind').val() === "") {
+		setRed('kindname');
+		setRed('kind');
+		return ("- Es wurde kein Kind eingetragen\n");
+	}	
+	return "";
+}
+registerVerifyCallback(kindCheckForErrors);
+
+
+function illnessCheckForErrors() {
+	let errorMessage = "";
+	let errorNumber = 0;
 
 	if (!$('#illnessNo').prop('checked') && !$('#illnessYes').prop('checked')) {
 		errorMessage += ("- Es wurde kein Feld bei Krankheit ausgefüllt\n");
@@ -25,6 +63,18 @@ function checkForm(event) {
 		setRed('krankheit')
 		setRed('illnessInfo', 'illnessYes', 'illnessNo')
 	}
+
+	if (errorNumber > 0)
+		return errorMessage;
+	else
+		return "";
+}
+registerVerifyCallback(illnessCheckForErrors);
+
+
+function allergyCheckForErrors() {
+	let errorMessage = "";
+	let errorNumber = 0;
 
 	if (!$('#allergyNo').prop('checked') && !$('#allergyYes').prop('checked')) {
 		errorMessage += ("- Es wurde kein Feld bei Allergie ausgefüllt\n");
@@ -47,6 +97,18 @@ function checkForm(event) {
 		setRed('allergien')
 	}
 
+	if (errorNumber > 0)
+		return errorMessage;
+	else
+		return "";
+}
+registerVerifyCallback(allergyCheckForErrors);
+
+
+function swimmingCheckForErrors() {
+	let errorMessage = "";
+	let errorNumber = 0;
+
 	if (!$('#swimNo').prop('checked') && !$('#swimYes').prop('checked')) {
 		errorMessage += ("- Es wurde keine Angabe zum Schwimmen gemacht\n");
 		errorNumber++;
@@ -62,12 +124,36 @@ function checkForm(event) {
 		setRed('swimNo', 'swimYes')
 	}
 
+	if (errorNumber > 0)
+		return errorMessage;
+	else
+		return "";
+}
+registerVerifyCallback(swimmingCheckForErrors);
+
+
+function phoneCheckForErrors() {
+	let errorMessage = "";
+	let errorNumber = 0;
+
 	if($('#phone').val() === "" && $('#mobile').val() === "") {
 		errorMessage += ("- Es wurde weder eine Telefonnummer noch eine Handynummer als Kontakt angegeben\n");
 		errorNumber++;
 		setRed('mobile', 'phone')
 		setRed('phone', 'mobile')
 	}
+
+	if (errorNumber > 0)
+		return errorMessage;
+	else
+		return "";
+}
+registerVerifyCallback(phoneCheckForErrors);
+
+
+function transportCheckForErrors() {
+	let errorMessage = "";
+	let errorNumber = 0;
 
 	if ($('#theretripYes').prop('checked') && $('#theretripCount').val() < 1) {
 		errorMessage += ("- Es wurde Hinfahrt angekreuzt, aber keine Anzahl an Plätzen angegeben.\n");
@@ -109,6 +195,18 @@ function checkForm(event) {
 		setRed('returntripCount')
 	}
 
+	if (errorNumber > 0)
+		return errorMessage;
+	else
+		return "";
+}
+registerVerifyCallback(transportCheckForErrors);
+
+
+function bankaccountCheckForErrors() {
+	let errorMessage = "";
+	let errorNumber = 0;
+
 	if ($('#accountHolder').val() === "") {
 		errorMessage += ("- Es wurde kein Kontoinhaber angegeben.\n");
 		errorNumber++;
@@ -122,14 +220,16 @@ function checkForm(event) {
 		setRed('iban')
 	}
 
-
-	errorMessage += ("\nAnmeldung trotzdem absenden?\n");
-
-	if (errorNumber > 0) {
-		if (!confirm(errorMessage))
-			event.preventDefault();
-	}
+	if (errorNumber > 0)
+		return errorMessage;
+	else
+		return "";
 }
+registerVerifyCallback(bankaccountCheckForErrors);
+
+// --------------------------------------------------------------
+
+
 
 function insertName(event) {
 	name = $('#kind').val();
