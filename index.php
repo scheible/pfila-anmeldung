@@ -36,6 +36,22 @@
 		return "";
 	}
 
+	function folderContentToSortedArray($directory) {
+		$formblockMap = array();
+		$handle = opendir($directory);
+		 
+		if ($handle) {
+		    while (($entry = readdir($handle)) !== FALSE) {
+		    	if ($entry[0] != ".") {
+					$formblockMap[] = $directory."/".$entry;
+		    	}
+		    }
+		}
+		closedir($handle);
+		sort($formblockMap);
+		return $formblockMap;
+	}
+
 
 	$kostenKind= getParameter('kostenKind');
 	$kostenWeiteresKind = getParameter('kostenWeiteresKind');
@@ -47,19 +63,8 @@
 	$expire    = getParameter('anmend');
 
 
-	$formblockMap = array(
-		"form_data/name.php",
-		"form_data/gesundheitsinformationen.php",
-		"form_data/name.php",
-		"form_data/gesundheitsinformationen.php",
-		"form_data/medizinischer_kontext.php",
-		"form_data/unvertraeglichkeit_und_allergien.php",
-		"form_data/schwimmfaehigkeit.php",
-		"form_data/ernaehrungsgewohnheiten.php",
-		"form_data/kontaktdaten.php",
-		"form_data/transportfaehigkeit.php",
-		"form_data/zahlungsinformationen.php"
-	);
+	$formblockMap = folderContentToSortedArray('./form_data');
+
 	$formBlocks = explode(",", getParameter('formblocks'));
 	$parsedFormblocks = [];
 	foreach($formBlocks as $block) {

@@ -1,3 +1,16 @@
+<script type="text/javascript">
+    function kindCheckForErrors() {
+        if ($('#kind').val() === "") {
+            setRed('kindname');
+            setRed('kind');
+            return ("- Es wurde kein Kind eingetragen\n");
+        }   
+        return "";
+    }
+    
+    registerVerifyCallback(kindCheckForErrors);
+</script>
+
 <div class="formGroupe" id="kindname">
     <div class="groudHeading">Name des Teilnehmers oder der Teilnehmerin</div>
     <input type="text" placeholder="Vorname Nachname Kind" name="kind" id="kind" onchange="insertName(event);"/><br>

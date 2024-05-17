@@ -36,8 +36,12 @@
 
 			<label>Kosten Rover/Leiter</label>
 			<input type="text" id="kostenLeiter" name="kostenLeiter" placeholder="zB 50,20 (eingeben ohne EUR am Ende)" ><br><br>
-			
-			<input type="hidden" name="formblocks" value="1,2,3,4,5,6,7,8,9,10" />
+
+			 <label for="formblocks">Formularvariante auswählen</label>
+			<select name="formblocks" id="formblocks">
+			  <option value="1,2,3,4,5,6,7,8,9,10">Anmeldung für Kinder</option>
+			  <option value="1,1,1,1">Testanmeldung</option>
+			</select> <br><br>
 
 			<input type="submit" value="Link generieren" >
 		</div>
