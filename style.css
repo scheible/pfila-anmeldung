@@ -48,3 +48,9 @@ label {
 .error {
 	border: 2px solid red !important;
 }
+table{
+	margin: 0 auto;
+	text-align: left;
+	border: transparent;
+	border-spacing: 1rem 0;
+}
