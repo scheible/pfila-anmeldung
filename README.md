@@ -6,7 +6,7 @@ Sammlung von PHP Skripten, die Anmeldeformulare für Zeltlager etc. bereitstelle
 Docker Compose installieren.
 Dann folgendes _compose.yml_ neben dem Ordner mit dem Quellcode anlegen:
 
-`
+```
 services:
   frontend: 
     image: php:apache-bullseye
@@ -14,7 +14,7 @@ services:
       - ./pfila-anmeldung:/var/www/html:rw
     ports:
       - 8085:80
-`
+```
 
 Dann starten mit `> sudo docker compose up`.
 
