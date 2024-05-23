@@ -39,7 +39,7 @@
 
 			 <label for="formblocks">Formularvariante auswählen</label>
 			<select name="formblocks" id="formblocks">
-			  <option value="1,2,3,4,5,6,7,8,9,10">Anmeldung für Kinder</option>
+			  <option value="0,1,2,3,4,5,6,7,8,9,10,11">Anmeldung für Kinder</option>
 			  <option value="1,1,1,1">Testanmeldung</option>
 			</select> <br><br>
 
