@@ -2,6 +2,33 @@
 Sammlung von PHP Skripten, die Anmeldeformulare für Zeltlager etc. bereitstellen.
 
 
+## Entwicklungsumgebung aufsetzen
+Docker Compose installieren.
+Dann folgendes _compose.yml_ neben dem Ordner mit dem Quellcode anlegen:
+
+`
+services:
+  frontend: 
+    image: php:apache-bullseye
+    volumes:
+      - ./pfila-anmeldung:/var/www/html:rw
+    ports:
+      - 8085:80
+`
+
+Dann starten mit `> sudo docker compose up`.
+
+Die Berechtigung auf dem _pfila-anmeldung_ ordner muss geändert werden `> sudo chmod o+r pfila-anmeldung`
+
+Die Datei _pfila-anmeldung/.htaccess_ erzwingt https, was in der Testumgebung nicht unterstützt wird. Diese Datei löschen oder umbenennen.
+
+
+## Installation in Produktivumgebung
+
+
+### Sicherheit und Zugriffskontrolle
+
+
 ## Zeltlageranmeldung
 Alle Informationen zum jeweiligen Zeltlager (Zeitraum, Ort, Kosten, Anmeldeschluss) sind als GET Parameter im URI String angegeben. Wenn das Formular mit den entsprechenden Parametern aufgerufen wird, generiert das PHP Skript ein entsprechendes Anmeldeformular.
 Die Daten aus dem Anmeldeformular gehen per POST Request an ein weiteres PHP Skript, das die Anmeldedaten in eine CSV Datei auf dem Server speichert.
