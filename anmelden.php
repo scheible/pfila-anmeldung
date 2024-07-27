@@ -91,6 +91,21 @@
 
 	$bemerkung = getData("freieBemerkung");
 
+	$day1 = getData("day0");
+	$day2 = getData("day1");
+	$day3 = getData("day2");
+	$day4 = getData("day3");
+	$day5 = getData("day4");
+	$day6 = getData("day5");
+	$day7 = getData("day6");
+	$day8 = getData("day7");
+	$day9 = getData("day8");
+	$day10 = getData("day9");
+	$day11 = getData("day10");
+	$day12 = getData("day11");
+	$day13 = getData("day12");
+	$day14 = getData("day13");
+
 	$action = getData("action");
 
 	$ip = $_SERVER['REMOTE_ADDR'];
@@ -128,6 +143,20 @@
 				"IBAN;".
 				"BIC;".
 				"Bemerkung;".
+				"Tag 1;".
+				"Tag 2;".
+				"Tag 3;".
+				"Tag 4;".
+				"Tag 5;".
+				"Tag 6;".
+				"Tag 7;".
+				"Tag 8;".
+				"Tag 9;".
+				"Tag 10;".
+				"Tag 11;".
+				"Tag 12;".
+				"Tag 13;".
+				"Tag 14;".
 				"Datum Anmeldung;".
 				"IP";
 
@@ -163,6 +192,20 @@
 				$iban.";".
 				$bic.";".
 				$bemerkung.";".
+				$participateOnDays.";". 
+				$day2.";". 
+				$day3.";". 
+				$day4.";". 
+				$day5.";". 
+				$day6.";". 
+				$day7.";". 
+				$day8.";". 
+				$day9.";". 
+				$day10.";".
+				$day11.";".
+				$day12.";".
+				$day13.";".
+				$day14.";".
 				$dateTime.";".
 				$ip;
 

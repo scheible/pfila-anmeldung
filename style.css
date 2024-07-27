@@ -48,3 +48,7 @@ label {
 .error {
 	border: 2px solid red !important;
 }
+.datetable {
+	text-align: left;
+	display: inline;
+}
