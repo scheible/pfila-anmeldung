@@ -1,7 +1,13 @@
 <script type="text/javascript">
+    function isValidEmail(email) {
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return pattern.test(email);
+    }
+
     function phoneCheckForErrors() {
         let errorMessage = "";
         let errorNumber = 0;
+        let blocking = false;
 
         if($('#phone').val() === "" && $('#mobile').val() === "") {
             errorMessage += ("- Es wurde weder eine Telefonnummer noch eine Handynummer als Kontakt angegeben\n");
@@ -9,11 +15,17 @@
             setRed('mobile', 'phone')
             setRed('phone', 'mobile')
         }
+        if(!isValidEmail($('#email').val())) {
+            errorMessage += ("- Es wurde keine gültige E-Mailadresse angeben!");
+            errorNumber++;
+            setRed('email', 'email')
+            blocking = true;
+        }
 
         if (errorNumber > 0)
-            return errorMessage;
+            return [blocking, errorMessage];
         else
-            return "";
+            return [false, ""];
     }
     registerVerifyCallback(phoneCheckForErrors);
 

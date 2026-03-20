@@ -25,9 +25,9 @@
         }
 
         if (errorNumber > 0)
-            return errorMessage;
+            return [false, errorMessage];
         else
-            return "";
+            return [false, ""];
     }
     registerVerifyCallback(allergyCheckForErrors);
 

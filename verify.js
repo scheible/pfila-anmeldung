@@ -11,21 +11,30 @@ function registerVerifyCallback($verifyCallback) {
 
 function checkForm(event) {
 	let errorMessageList = "Mögliche Fehler im Formular:\n";
+	let blockingTotal = false;
 	let errorNumber = 0;
 
 	for (var i=0;i<verifyCallbackList.length ; i++) {
-		errorMessage = verifyCallbackList[i]();
+		[blocking, errorMessage] = verifyCallbackList[i]();
 		if (errorMessage !== "") {
 			errorMessageList += errorMessage;
 			errorNumber++;
 		}
+		if (blocking) {
+			blockingTotal = true;
+		}
 	}
 
-	errorMessageList += ("\nAnmeldung trotzdem absenden?\n");
-
 	if (errorNumber > 0) {
-		if (!confirm(errorMessageList))
+		if (!blockingTotal) {
+			errorMessageList += ("\nAnmeldung trotzdem absenden?\n");
+			if (!confirm(errorMessageList))
+				event.preventDefault();
+		} else {
+			errorMessageList += "\n\nDie Anmeldung kann nicht abgesendet werden!\n";
+			alert(errorMessageList);
 			event.preventDefault();
+		}
 	}
 }
 

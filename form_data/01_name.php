@@ -5,7 +5,7 @@
             setRed('kind');
             return ("- Es wurde kein Kind eingetragen\n");
         }   
-        return "";
+        return [false, ""];
     }
     
     registerVerifyCallback(kindCheckForErrors);

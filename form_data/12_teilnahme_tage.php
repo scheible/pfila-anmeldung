@@ -1,6 +1,6 @@
 <script type="text/javascript">
     function teilnahmeTageCheckForErrors() {
-        return "";
+        return [false, ""];
     }
     
     registerVerifyCallback(teilnahmeTageCheckForErrors);
