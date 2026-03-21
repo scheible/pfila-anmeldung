@@ -192,7 +192,6 @@
 				$iban.";".
 				$bic.";".
 				$bemerkung.";".
-				$participateOnDays.";".
 				$day1.";". 
 				$day2.";". 
 				$day3.";". 
