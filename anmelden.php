@@ -51,6 +51,8 @@
 		if (!$success) {
 			$errorMessage = error_get_last()['message'];
 			echo $errorMessage;
+		} else {
+			echo "e-mail sent successfully";
 		}
 	}
 
