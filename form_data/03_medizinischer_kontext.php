@@ -1,4 +1,4 @@
-<div class="formGroupe">
+<div class="formGroup">
     <div class="groudHeading">Wichtig! Bitte aufmerksam durchlesen!</div>
     <p>Da es uns aus rechtlichen Gründen nicht gestattet ist, Eurem Kind Medikamente zu verabreichen, bitten wir Euch, die für Euer Kind notwendigen Medikamente einnahmefertig und mit Namen beschriftet beim jeweiligen Betreuer abzugeben, der Euer Kind auf die Einnahme hinweisen wird. Schließlich zwingt uns die Rechtslage dazu, euer Einverständnis für kleinere medizinische Hilfen durch unsere Betreuer zu bitten. Natürlich werden wir bei Verletzungen, die wir nicht einschätzen können oder bei Verschlechterung des Allgemeinzustandes einen Arzt aufsuchen und Euch ggf. informieren.</p>
 
