@@ -47,7 +47,11 @@
 	    $header .= "MIME-Version: 1.0\r\n";
 	    $header .= "Content-Type: text/html; charset=utf-8\n";
 
-        mail($mailAddr,"Erfolgreiche Anmeldung", $text, $header);
+        $success = mail($mailAddr,"Erfolgreiche Anmeldung", $text, $header);
+		if (!$success) {
+			$errorMessage = error_get_last()['message'];
+			echo $errorMessage;
+		}
 	}
 
 	$kind = getData("kind");
