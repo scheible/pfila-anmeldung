@@ -9,11 +9,7 @@
 
 	
 	foreach($parsedFormblocks as $blockIndex) {
-		echo '<div class="formGroup">';
-		
 		include($formblockMap[$blockIndex]);
-		
-		echo '</div>';
 	}
 	
 	?>
