@@ -1,5 +1,3 @@
-test
-
 # pfila-anmeldung
 Sammlung von PHP Skripten, die Anmeldeformulare für Zeltlager etc. bereitstellen.
 
@@ -26,9 +24,17 @@ Die Datei _pfila-anmeldung/.htaccess_ erzwingt https, was in der Testumgebung ni
 
 
 ## Installation in Produktivumgebung
-
+Kopiere alle Dateien aus dem Repo in das Deploymentverzeichnis auf dem Webserver.
 
 ### Sicherheit und Zugriffskontrolle
+Die Datei `data/.htaccess` enthaelt eine Referenz auf die Datei `.htpassw`. Die Datei `.htpasswd` muss erstellt und mit Nutzernamen gefuellt werden. Dann muss die Referenz in `data/.htaccess` angepasst werden.
+
+### CI/CD
+Automatisches Deployment ist eingerichtet auf Strato Webspace. Die Dateien `deploy.php` und `deploy.sh` sind nicht teil des Repos, muessen aber auf dem Webserver im Deploymentverzeichnis existieren. 
+
+`deploy.php` kann nicht Teil des Repos sein, da es ein Secret enthaelt. 
+
+`deploy.sh` kann nicht teil des Repos sein, da die Datei ausfuehrbar sein muss und ein `git pull` diese Eigenschaft ueberschreiben wuerde.
 
 
 ## Zeltlageranmeldung
