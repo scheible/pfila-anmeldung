@@ -1,2 +1,2 @@
 #!/bin/bash
-touch deploy-script-triggered
+git pull
