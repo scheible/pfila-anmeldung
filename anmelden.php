@@ -50,9 +50,9 @@
         $success = mail($mailAddr,"Erfolgreiche Anmeldung", $text, $header);
 		if (!$success) {
 			$errorMessage = error_get_last()['message'];
-			echo $errorMessage;
+			//echo $errorMessage;
 		} else {
-			echo "e-mail sent successfully";
+			//echo "e-mail sent successfully";
 		}
 	}
 
