@@ -4,6 +4,10 @@
 	</p>
 
 	<p>
+	Das Rover-Leiter-Wochenende ist von der Aufsichtspflicht ausgeschlossen!
+	</p>
+
+	<p>
 	Bei grober Fahrlässigkeit, Unkameradschaftlichkeit und Ungehorsam muss eine Rücksendung des/der Teilnehmers/in auf eigene Kosten, Verantwortung und ohne irgendwelche Kostenerstattung erfolgen. Sollte während der Freizeit die Behandlung des/der Teilnehmers/in durch einen Arzt nötig sein, nimmt die Freizeitleitung Rücksprache mit den Erziehungsberechtigen, sofern dies möglich ist. Sollten diese nicht erreichbar sein, liegt es im Ermessen des jeweiligen behandelnden Arztes oder der Freizeitleitung, Entscheidungen über notwendige Eingriffe/Impfungen zu treffen. Den Teilnehmern/innen kann stundenweise Freizeit ohne Aufsicht gewährt werden, sofern dies nicht ausdrücklich untersagt wird. Dieses ist der Freizeitleitung schriftlich durch die/den Erziehungsberechtigten mitzuteilen.
 	</p>
 
