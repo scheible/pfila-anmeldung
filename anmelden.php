@@ -233,7 +233,7 @@
 		if ($myfile) {
 			fwrite($myfile, $dataSet."\n");
 			fclose($myfile);	
-			//sendConfirmationEmail($email, $confMail);
+			sendConfirmationEmail($email, $confMail);
 		}
 	}
 
