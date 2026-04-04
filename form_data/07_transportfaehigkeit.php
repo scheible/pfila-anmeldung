@@ -6,41 +6,36 @@
 		if ($('#theretripYes').prop('checked') && $('#theretripCount').val() < 1) {
 			errorMessage += ("- Es wurde Hinfahrt angekreuzt, aber keine Anzahl an Plätzen angegeben.\n");
 			errorNumber++;
-			setRed('trips')
 			setRed('theretripCount', 'theretripYes')
 			setRed('theretripYes', 'theretripCount')
 		}
 		if (!$('#theretripYes').prop('checked') && $('#theretripCount').val() > 0) {
 			errorMessage += ("- Es wurde eine Anzahl an Plätzen für die Hinfahrt angegeben aber Hinfahrt nicht angekreuzt.\n");
 			errorNumber++;
-			setRed('trips')
 			setRed('theretripCount', 'theretripYes')
 			setRed('theretripYes', 'theretripCount')
 		}
 		if ($('#theretripCount').val() > 8) {
 			errorMessage += ("- Es wurden mehr als 8 Plätze für die Hinfahrt angegeben.\n");
 			errorNumber++;
-			setRed('trips')
-			setRed('theretripCount')
+			setRed('theretripCount', 'theretripYes')
 		}
 
 		if ($('#returntripYes').prop('checked') && $('#returntripCount').val() < 1) {
 			errorMessage += ("- Es wurde Rückfahrt angekreuzt, aber keine Anzahl an Plätzen angegeben.\n");
 			errorNumber++;
-			setRed('trips')
-			setRed('returntripCount')
+			setRed('returntripYes', 'returntripCount')
+			setRed('returntripCount', 'returntripYes')
 		}
 		if (!$('#returntripYes').prop('checked') && $('#returntripCount').val() > 0) {
-			errorMessage += ("- Es wurde eine Anzahl an Plätzen für die Rückfahrt angegeben aber Hinfahrt nicht angekreuzt.\n");
+			errorMessage += ("- Es wurde eine Anzahl an Plätzen für die Rückfahrt angegeben aber Rückfahrt nicht angekreuzt.\n");
 			errorNumber++;
-			setRed('trips')
-			setRed('returntripCount')
+			setRed('returntripCount', 'returntripYes')
 		}
 		if ($('#returntripCount').val() > 8) {
 			errorMessage += ("- Es wurden mehr als 8 Plätze für die Rückfahrt angegeben.\n");
 			errorNumber++;
-			setRed('trips')
-			setRed('returntripCount')
+			setRed('returntripCount', 'returntripYes')
 		}
 
 		if (errorNumber > 0)
