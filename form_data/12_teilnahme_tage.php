@@ -17,12 +17,13 @@
 
         if ($numberOfDays > 14) {
             echo "<p>Formularfehler: Das Event geht länger als 14 Tage. Einzelne Teilnahme Tage können nur bei kürzeren Events angegeben werden!</p>";
-        } else {
-            echo "<table class=\"datetable\">";        
+        } else {      
             for ($i = 0; $i < $numberOfDays; $i++) {
-                echo "<tr><td><input type=\"checkbox\" id=\"day$i\" name=\"day$i\" value=\"x\" checked=\"checked\"></td>";
+                echo "<label class=\"checkbox\">";
+                echo "<input type=\"checkbox\" id=\"day$i\" name=\"day$i\" value=\"x\" checked=\"checked\">";
                 $currentDate = strtotime($startDate."+$i day");
-                echo "<td>".date("d.m.Y (l)", $currentDate)."</td></tr>";
+                echo date("d.m.Y (l)", $currentDate);
+                echo "</label>";
             }
             echo "</table>";
         }

@@ -48,12 +48,7 @@
 	    $header .= "Content-Type: text/html; charset=utf-8\n";
 
         $success = mail($mailAddr,"Erfolgreiche Anmeldung", $text, $header);
-		if (!$success) {
-			$errorMessage = error_get_last()['message'];
-			//echo $errorMessage;
-		} else {
-			//echo "e-mail sent successfully";
-		}
+		return $success;
 	}
 
 	$kind = getData("kind");
@@ -220,6 +215,7 @@
 	
 	$fileName = removeSpecialChars($action);
 
+	$success = false;
 	if ($fileName != "") {
 		$fileName = "data/".$fileName.".csv";
 
@@ -233,7 +229,7 @@
 		if ($myfile) {
 			fwrite($myfile, $dataSet."\n");
 			fclose($myfile);	
-			sendConfirmationEmail($email, $confMail);
+			$success = sendConfirmationEmail($email, $confMail);
 		}
 	}
 
@@ -255,10 +251,10 @@
 		<h1>Anmeldung erfolgreich</h1>
 		<p><?php echo $kind; ?> wurde erfolgreich für <?php echo $action; ?> angemeldet.</p>
 		<?php
-			if ($email != "") {
+			if ($email != "" && $success) {
 				echo "<p>Eine Anmeldebestätigung wurde an ".$email." versendet</p>";
 			} else {
-				echo "<p>Du hast keine E-Mail Adresse angegeben. Daher wurde keine Anmeldebestätigung versandt, deine Anmeldung ist aber trotzdem angekommen</p>";
+				echo "<p>Achtung: Es wurde keine Bestätigung versendet. Das kann daran liegen, dass du keine E-Mail Adresse angegeben hast.</p>";
 			}
 		?>
 		<input type="button" value="Weiteres Kind anmelden" onclick="history.back();">

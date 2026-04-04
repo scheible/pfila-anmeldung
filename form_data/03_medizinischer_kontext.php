@@ -4,13 +4,34 @@
 
     <p>ich bin damit einverstanden, dass (bei) meinem Kind: (bitte zutreffendes ankreuzen)</p>
 
-    <input type="checkbox" name="pflaster" id="pflaster" value="x"/>bei kleineren Verletzungen oder Schürfwunden ein Pflaster verabreicht wird<br>
-    <input type="checkbox" name="pflasterAllergie" id="pflasterAllergie" value="x"/>mein Kind hat eine Pflasterallergie<br>
-    <input type="checkbox" name="bepanthen" id="bepanthen" value="x"/>kleinere Wunden oder Verletzungen mit einem Desinfektionsspray oder Salbe (Bepanthen o. ä.) behandelt werden<br>
-    <input type="checkbox" name="zecken" id="zecken" value="x"/>Zecken mit einer Zeckenzange/-karte entfernt werden<br>
-    <input type="checkbox" name="zeckenArzt" id="zeckenArzt" value="x"/>Entfernung nur durch einen Arzt gewünscht<br>
-    <input type="checkbox" name="wespenstich" id="wespenstich" value="x"/>bei Mücken- oder Wespenstichen eine entsprechende Salbe (Fenistil o.ä.) verabreicht wird <br>
-    <input type="checkbox" name="spreisel" id="spreisel" value="x"/>kleinere Fremdkörper (z.B. Spreißel) mit einer Pinzette entfernt werden dürfen<br>
+    <label class="checkbox">
+        <input type="checkbox" name="pflaster" id="pflaster" value="x"/>
+        bei kleineren Verletzungen oder Schürfwunden ein Pflaster verabreicht wird
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="pflasterAllergie" id="pflasterAllergie" value="x"/>
+        mein Kind hat eine Pflasterallergie
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="bepanthen" id="bepanthen" value="x"/>
+        kleinere Wunden oder Verletzungen mit einem Desinfektionsspray oder Salbe (Bepanthen o. ä.) behandelt werden
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="zecken" id="zecken" value="x"/>
+        Zecken mit einer Zeckenzange/-karte entfernt werden
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="zeckenArzt" id="zeckenArzt" value="x"/>
+        Entfernung nur durch einen Arzt gewünscht
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="wespenstich" id="wespenstich" value="x"/>
+        bei Mücken- oder Wespenstichen eine entsprechende Salbe (Fenistil o.ä.) verabreicht wird
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="spreisel" id="spreisel" value="x"/>
+        kleinere Fremdkörper (z.B. Spreißel) mit einer Pinzette entfernt werden dürfen
+    </label>
 
     Datum der letzten Impfung gegen Tetanus
     <input type="text" placeholder="Datum" name="tetanus" id="tetanus" /><br />

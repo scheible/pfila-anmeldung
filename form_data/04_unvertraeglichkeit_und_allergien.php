@@ -35,7 +35,13 @@
 
 <div class="formGroup" id="allergien">
     <div class="groudHeading"><span class="nameKind">der Teilnehmer</span> hat Lebensmittelunverträglichkeiten oder Allergien</div>
-    <input type="radio" name="allergy" id="allergyNo" value="x"/> Nein<br>
-    <input type="radio" name="allergy" id="allergyYes" value="x"/> Ja, nämlich<br>
+
+    <label class="radiobox">
+        <input type="radio" name="allergy" id="allergyNo" value="x"/> Nein
+    </label>
+    <label class="radiobox">
+        <input type="radio" name="allergy" id="allergyYes" value="x"/> Ja, nämlich
+    </label>
+    
     <textarea name="allergyInfo" id="allergyInfo" placeholder="info"></textarea>
 </div>
