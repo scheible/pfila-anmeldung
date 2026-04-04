@@ -76,7 +76,8 @@
 						echo "<a href=\"../data/";
 						echo $arrFiles[$i];
 						echo "\" >";
-						echo $arrFiles[$i]."</a><br>";
+						echo $arrFiles[$i]."</a>";
+						echo " <a href=\"view.php?file=$arrFiles[$i]\">anzeigen</a><br />";
 						//echo "</a> ";
 						//echo "<a href=\"test\">löschen</a><br>";
 						$numFiles++;
