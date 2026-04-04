@@ -1,7 +1,6 @@
 <script type="text/javascript">
     function kindCheckForErrors() {
         if ($('#kind').val() === "") {
-            setRed('kindname');
             setRed('kind');
             return ("- Es wurde kein Kind eingetragen\n");
         }   

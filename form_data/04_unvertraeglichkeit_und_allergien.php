@@ -6,22 +6,19 @@
         if (!$('#allergyNo').prop('checked') && !$('#allergyYes').prop('checked')) {
             errorMessage += ("- Es wurde kein Feld bei Allergie ausgefüllt\n");
             errorNumber++;
-            setRed('allergien')
-            setRed('allergyNo', 'allergyYes')
-            setRed('allergyYes', 'allergyNo')
-            setRed('allergyInfo', 'allergyYes', 'allergyNo')
+            setRed('allergien');
         }
         if ($('#allergyNo').prop('checked') && $('#allergyYes').prop('checked')) {
             errorMessage += ("- Bei Allergie wurde ja und nein ausgewählt\n");
             errorNumber++;
-            setRed('allergien')
-            setRed('allergyNo', 'allergyYes')
-            setRed('allergyYes', 'allergyNo')
+            setRed('allergien');
+            setRed('allergyNo', 'allergyYes');
+            setRed('allergyYes', 'allergyNo');
         }
         if ($('#allergyYes').prop('checked') && $('#allergyInfo').val() === "") {
             errorMessage += ("- Es wurde Allergie ausgewählt aber kein Text eingegeben\n");
             errorNumber++;
-            setRed('allergien')
+            setRed('allergyInfo', 'allergyNo', 'allergyYes');
         }
 
         if (errorNumber > 0)
@@ -42,6 +39,6 @@
     <label class="radiobox">
         <input type="radio" name="allergy" id="allergyYes" value="x"/> Ja, nämlich
     </label>
-    
+
     <textarea name="allergyInfo" id="allergyInfo" placeholder="info"></textarea>
 </div>

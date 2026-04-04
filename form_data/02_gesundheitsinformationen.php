@@ -16,7 +16,6 @@
         if ($('#illnessYes').prop('checked') && $('#illnessInfo').val() === "") {
             errorMessage += ("- Es wurde Krankheit ausgewählt aber kein Text eingegeben\n");
             errorNumber++;
-            setRed('krankheit')
             setRed('illnessInfo', 'illnessYes', 'illnessNo')
         }
 
@@ -38,6 +37,6 @@
     <label class="radiobox">
         <input type="radio" name="illness" id="illnessYes" value="x"/> Ja, nämlich
     </label>
-    
+
     <textarea name="illnessInfo" id="illnessInfo" placeholder="info"></textarea>
 </div>
