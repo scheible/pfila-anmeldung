@@ -25,7 +25,6 @@
                 echo date("d.m.Y (l)", $currentDate);
                 echo "</label>";
             }
-            echo "</table>";
         }
     ?>
 
