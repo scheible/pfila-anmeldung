@@ -21,15 +21,12 @@ form {
 	text-align: left;
 	border-radius: 5px;
 }
-
 label.checkbox, label.radiobox {
 	display: flex;
 	align-items: center; /* vertikal zentrieren */
 	gap: 0.4em;
 	margin-bottom: 1em;
 	cursor: pointer;
-}
-.formGroup input[type="checkbox"], input[type="radio"] {
 }
 .groudHeading {
 	font-weight: bold;
