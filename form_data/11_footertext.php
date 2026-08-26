@@ -1,7 +1,7 @@
 <div class="formGroup">
 
 
-<h1>Zeltlager - Teilnahmebedingungen</h1>
+<div class="groudHeading">Teilnahmebedingungen</div>
 
 <h2>Aufsichtspflicht</h2>
 <p>Die Aufsicht über die teilnehmenden Kinder und Jugendlichen wird von den verantwortlichen Leiterinnen und Leitern während der Freizeit sorgfältig wahrgenommen. Für Schäden, die aus der Missachtung der Freizeitordnung oder der Anweisungen der Leitung entstehen, kann darüber hinaus keine Haftung übernommen werden.
