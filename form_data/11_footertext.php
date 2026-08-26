@@ -1,31 +1,34 @@
 <div class="formGroup">
-	<p>
-	Die Aufsichtspflicht über die Teilnehmer/innen wird durch die Leiter verantwortungsvoll wahrgenommen. Für Folgen der Übertretung der Freizeitordnung oder der Anweisungen der Leiter/innen können Leiter und Vorstand darüber hinaus keine Haftung übernehmen.
-	</p>
 
-	<p>
-	Das Rover-Leiter-Wochenende ist von der Aufsichtspflicht ausgeschlossen!
-	</p>
 
-	<p>
-	Bei grober Fahrlässigkeit, Unkameradschaftlichkeit und Ungehorsam muss eine Rücksendung des/der Teilnehmers/in auf eigene Kosten, Verantwortung und ohne irgendwelche Kostenerstattung erfolgen. Sollte während der Freizeit die Behandlung des/der Teilnehmers/in durch einen Arzt nötig sein, nimmt die Freizeitleitung Rücksprache mit den Erziehungsberechtigen, sofern dies möglich ist. Sollten diese nicht erreichbar sein, liegt es im Ermessen des jeweiligen behandelnden Arztes oder der Freizeitleitung, Entscheidungen über notwendige Eingriffe/Impfungen zu treffen. Den Teilnehmern/innen kann stundenweise Freizeit ohne Aufsicht gewährt werden, sofern dies nicht ausdrücklich untersagt wird. Dieses ist der Freizeitleitung schriftlich durch die/den Erziehungsberechtigten mitzuteilen.
-	</p>
+<h1>Zeltlager - Teilnahmebedingungen</h1>
 
-	<p>
-	Der Teilnehmerbeitrag (wie in der Einladung angegeben) und die Getränkekosten, die während der Freizeit entstehen, werden von den Pfadfindern Deggingen eingezogen.
-	</p>
+<h2>Aufsichtspflicht</h2>
+<p>Die Aufsicht über die teilnehmenden Kinder und Jugendlichen wird von den verantwortlichen Leiterinnen und Leitern während der Freizeit sorgfältig wahrgenommen. Für Schäden, die aus der Missachtung der Freizeitordnung oder der Anweisungen der Leitung entstehen, kann darüber hinaus keine Haftung übernommen werden.
+Das Rover-Leiter-Wochenende ist von der Aufsichtspflicht ausgenommen.</p>
 
-	<p>
-	Die Anmeldung durch dieses Formular ist verbindlich! Wir behalten uns vor bei Absagen eventuell entstandene Kosten zu
-	berechnen.<br>
-	Der Anmeldeschluss in der Einladung ist zu beachten. Nach Ablauf des Anmeldeschlusses können ggf. anschließend eingereichte Anmeldungen nicht mehr berücksichtigt werden!
-	</p>
+<h2>Verhaltensregeln und Ausschluss</h2>
+<p>Bei grober Fahrlässigkeit, wiederholtem Fehlverhalten oder Verstößen gegen die Freizeitordnung kann die Freizeitleitung den Ausschluss eines Teilnehmers oder einer Teilnehmerin aussprechen. In diesem Fall erfolgt die Rückreise auf eigene Kosten und Verantwortung der Erziehungsberechtigten; eine Erstattung des Teilnehmerbeitrags ist ausgeschlossen.</p>
 
-	<p>
-	Bei der Aktion gemachte Bildmaterialien werden vom Verband, Bezirk oder Stamm ggf. online und/oder als Printmedium veröffentlicht.
-	</p>
+<h2>Ärztliche Behandlung</h2>
+<p>Sollte während der Freizeit eine ärztliche Behandlung notwendig sein, nimmt die Freizeitleitung - sofern möglich - vorher Kontakt mit den Erziehungsberechtigten auf. Wenn diese nicht erreichbar sind, entscheidet der behandelnde Arzt oder die Freizeitleitung über notwendige Maßnahmen.</p>
 
-	<p>
-	Mit der Anmeldung zur Freizeit erkennen Teilnehmer/in und beide Erziehungsberechtigten diese Bedingungen an.
-	</p>
+<h2>Freizeit ohne Aufsicht</h2>
+<p>Den Teilnehmenden kann zeitweise Freizeit ohne direkte Aufsicht gewährt werden, sofern dies von den Erziehungsberechtigten nicht ausdrücklich untersagt wird. Ein entsprechender Hinweis muss der Freizeitleitung schriftlich vorliegen.</p>
+
+<h2>Kosten und Teilnehmerbeitrag</h2>
+<p>Der Teilnehmerbeitrag (wie in der Einladung angegeben) sowie während der Freizeit entstehende Getränkekosten werden vom Stamm Pfadfinder Deggingen eingezogen.</p>
+
+<p>Die Anmeldung ist verbindlich. Bei Absagen nach dem Anmeldeschluss können entstandene Kosten in Rechnung gestellt werden. Nach Ablauf des Anmeldeschlusses können später eingehende Anmeldungen möglicherweise nicht mehr berücksichtigt werden.</p>
+
+<h2>Frühzeitige Abreise</h2>
+<p>Sollte eine Teilnehmerin die Freizeit vorzeitig verlassen müssen - etwa aufgrund von Heimweh, Krankheit, Wetterbedingungen oder anderen persönlichen Gründen - bleibt der vollständige Teilnehmerbeitrag geschuldet. Zusätzlich entstandene Kosten können ebenfalls in Rechnung gestellt werden.</p>
+
+<h2>Bildmaterialien</h2>
+<p>Während der Freizeit entstehende Foto- und Videoaufnahmen können vom Verband, Bezirk oder Stamm für Online-Medien und Printpublikationen genutzt werden. Die Einwilligung kann von den Erziehungsberechtigten jederzeit mit Wirkung für die Zukunft widerrufen werden.</p>
+
+<h2>Bestätigung</h2>
+<p>Mit der Anmeldung erkennen die Teilnehmenden und beide Erziehungsberechtigten diese Bedingungen an.</p>
+
+
 </div>
