@@ -60,6 +60,8 @@
 
 		// Header bestimmen oder neu anlegen
 		$columns = $rows[0] ?? [];
+		unset($rows[0]);			 // Spaltenzeile aus rows entfernen
+		$rows = array_values($rows); // Indexe neu ordnen
 
 		// Schritt 1: POST-Feldnamen validieren und neue Spalten ergänzen
 		foreach ($postData as $key => $value) {
