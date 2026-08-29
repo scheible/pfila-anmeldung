@@ -53,15 +53,26 @@
 
 
 	function updateCsvWithPost($csvFile, array $postData){
-		// CSV einlesen
-		$rows = file_exists($csvFile)
-			? array_map(fn($line) => str_getcsv($line, ';', '"', '\\'), file($csvFile))
-			: [];
+		// Automatisch Zeitstempel und IP-Adresse hinzufügen
+		$postData['created_at'] = date('Y-m-d H:i:s');
+    	$postData['client_ip']  = $_SERVER['REMOTE_ADDR'] ?? '';
 
-		// Header bestimmen oder neu anlegen
-		$columns = $rows[0] ?? [];
-		unset($rows[0]);			 // Spaltenzeile aus rows entfernen
-		$rows = array_values($rows); // Indexe neu ordnen
+		$columns = [];
+		$rows = [];
+		if (file_exists($csvFile)) {
+			$fp = fopen($csvFile, 'r');
+
+			if (($row = fgetcsv($fp, 0, ';', '"', '\\')) !== false) {
+				$columns = $row;
+			}
+
+			while (($row = fgetcsv($fp, 0, ';', '"', '\\')) !== false) {
+				$rows[] = $row;
+			}
+
+			fclose($fp);
+		}
+
 
 		// Schritt 1: POST-Feldnamen validieren und neue Spalten ergänzen
 		foreach ($postData as $key => $value) {
