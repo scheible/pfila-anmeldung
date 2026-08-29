@@ -32,11 +32,11 @@
     <div class="groudHeading">Besondere Krankheit, auf die zu achten, oder Medikamente, die regelmäßig einzunehmen sind?</div>
 
     <label class="radiobox">
-        <input type="radio" name="illness" id="illnessNo" value="x"/> Nein
+        <input type="radio" name="Besondere_Krankheit" id="illnessNo" value="Nein"/> Nein
     </label>
     <label class="radiobox">
-        <input type="radio" name="illness" id="illnessYes" value="x"/> Ja, nämlich
+        <input type="radio" name="Besondere_Krankheit" id="illnessYes" value="Ja"/> Ja, nämlich
     </label>
 
-    <textarea name="illnessInfo" id="illnessInfo" placeholder="info"></textarea>
+    <textarea name="Besondere_Krankheit_Info" id="illnessInfo" placeholder="info"></textarea>
 </div>
