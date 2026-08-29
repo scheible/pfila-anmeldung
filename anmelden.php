@@ -122,9 +122,9 @@
 	}
 
 	// Das hier sind spezielle Variablen, die in jeder Anmeldung vorhanden sein sollten damit die E-Mail korrekt versendet werden kann.
-	$email = getData("email");
-	$kind = getData("kind");
-	$action = getData("action");
+	$email = getData("EMail");
+	$kind = getData("Teilnehmer_Name");
+	$action = getData("Veranstaltung");
 
 	$confMail = "Hallo,<br><br> ".$kind." wurde erfolgreich zu ".$action." angemeldet. <br><br>Viele Grüße, das Rover und Leiter Team der Degginger Pfadis";
 	

@@ -1,7 +1,7 @@
 <form action = "anmelden.php" method = "POST" >
 
 	<div class="formWrapper">
-		<input type="text" hidden="true" name="action" value="<?php echo $action; ?>" >
+		<input type="text" hidden="true" name="Veranstaltung" value="<?php echo $action; ?>" >
 
 		<?php
 		foreach($parsedFormblocks as $blockIndex) {
