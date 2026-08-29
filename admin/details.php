@@ -51,6 +51,10 @@ if (($handle = fopen($csvDatei, "r")) !== false) {
         $i++;
     }
 
+    if (!isset($data)) {
+        die("Eintrag nicht gefunden");
+    }
+
     echo "<table border='1' cellpadding='5' cellspacing='0'>";
 
     for ($j=0; $j<max(sizeof($header),sizeof($data)); $j++) {
@@ -60,7 +64,7 @@ if (($handle = fopen($csvDatei, "r")) !== false) {
         if ($d !== "") {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($h) . "</td>";
-            echo "<td>" . htmlspecialchars($d) . "</td>";
+            echo "<td>" . nl2br(htmlspecialchars($d)) . "</td>";
             echo "</tr>";
         }
     }
