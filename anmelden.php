@@ -101,7 +101,6 @@
 		}
 
 		// Schritt 3: CSV neu schreiben
-		echo "DEBUG: ".$csvFile;
 		$fp = fopen($csvFile, 'w');
 
 		// Header
@@ -161,10 +160,6 @@
 			} else {
 				echo "<p>Achtung: Es wurde keine Bestätigung versendet. Das kann daran liegen, dass du keine E-Mail Adresse angegeben hast.</p>";
 			}
-
-			echo "DEBUG";
-			echo $fileName;
-			echo $action;
 		?>
 		<input type="button" value="Weiteres Kind anmelden" onclick="history.back();">
 	</div>
