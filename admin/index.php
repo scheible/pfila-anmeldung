@@ -72,7 +72,7 @@
 
 				$numFiles = 0;
 				for ($i = 0; $i < count($arrFiles); $i++) {
-					if ($arrFiles[$i] != "." && $arrFiles[$i] != ".." && $arrFiles[$i] != ".htaccess" && $arrFiles[$i] != ".htpasswd") {
+					if (!str_starts_with($arrFiles[$i], '.')) {
 						echo "<a href=\"../data/";
 						echo $arrFiles[$i];
 						echo "\" >";
