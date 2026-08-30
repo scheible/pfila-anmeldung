@@ -29,10 +29,12 @@
 
 <div class="formGroup" id="schwimmen">
     <div class="groudHeading">Kann <span class="nameKind">der Teilnehmer</span> ohne besondere Aufsicht schwimmen?</div>
+    
+    <input type="hidden" name="Schwimmer" value="Keine Angabe">
     <label class="radiobox">
-        <input type="radio" name="swim" id="swimYes" value="x"/>Ja
+        <input type="radio" name="Schwimmer" id="swimYes" value="Ja"/>Ja
     </label>
     <label class="radiobox">
-        <input type="radio" name="swim" id="swimNo" value="x"/>Nein
+        <input type="radio" name="Schwimmer" id="swimNo" value="Nein"/>Nein
     </label>
 </div>

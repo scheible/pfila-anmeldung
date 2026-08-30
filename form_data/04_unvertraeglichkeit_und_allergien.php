@@ -33,12 +33,13 @@
 <div class="formGroup" id="allergien">
     <div class="groudHeading"><span class="nameKind">der Teilnehmer</span> hat Lebensmittelunverträglichkeiten oder Allergien</div>
 
+    <input type="hidden" name="Allergie" value="Keine Angabe">
     <label class="radiobox">
-        <input type="radio" name="allergy" id="allergyNo" value="x"/> Nein
+        <input type="radio" name="Allergie" id="allergyNo" value="Nein"/> Nein
     </label>
     <label class="radiobox">
-        <input type="radio" name="allergy" id="allergyYes" value="x"/> Ja, nämlich
+        <input type="radio" name="Allergie" id="allergyYes" value="Ja"/> Ja, nämlich
     </label>
 
-    <textarea name="allergyInfo" id="allergyInfo" placeholder="info"></textarea>
+    <textarea name="Allergie_Info" id="allergyInfo" placeholder="info"></textarea>
 </div>

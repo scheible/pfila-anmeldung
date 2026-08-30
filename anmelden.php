@@ -51,167 +51,93 @@
 		return $success;
 	}
 
-	$kind = getData("kind");
 
-	$illnessNo = getData("illnessNo");
-	$illnessYes = getData("illnessYes");
-	$illnessInfo = getData("illnessInfo");
+	function updateCsvWithPost($csvFile, array $postData){
+		// Automatisch Zeitstempel und IP-Adresse hinzufügen
+		$postData['created_at'] = date('Y-m-d H:i:s');
+    	$postData['client_ip']  = $_SERVER['REMOTE_ADDR'] ?? '';
 
-	$allergyNo = getData("allergyNo");
-	$allergyYes = getData("allergyYes");
-	$allergyInfo = getData("allergyInfo");
+		$columns = [];
+		$rows = [];
+		if (file_exists($csvFile)) {
+			$fp = fopen($csvFile, 'r');
 
-	$pflaster = getData("pflaster");
-	$pflasterAllergie = getData("pflasterAllergie");
-	$bepanthen = getData("bepanthen");
-	$zecken = getData("zecken");
-	$zeckenArzt = getData("zeckenArzt");
-	$wespenstich = getData("wespenstich");
-	$spreisel = getData("spreisel");
-	$tetanus = getData("tetanus");
+			if (($row = fgetcsv($fp, 0, ';', '"', '\\')) !== false) {
+				$columns = $row;
+			}
 
-	$swimNo = getData("swimNo");
-	$swimYes = getData("swimYes");
+			while (($row = fgetcsv($fp, 0, ';', '"', '\\')) !== false) {
+				$rows[] = $row;
+			}
 
-	$vegetarian = getData("vegetarian");
-	$vegan = getData("vegan");
-
-	$phone = getData("phone");
-	$mobile = getData("mobile");
-	$email = getData("email");
-
-	$theretripYes = getData("theretripYes");
-	$theretripCount = getData("theretripCount");
-	$returntripYes = getData("returntripYes");
-	$returntripCount = getData("returntripCount");
-
-	$accountHolder = getData("accountHolder");
-	$institute = getData("institute");
-	$iban = getData("iban");
-	$bic = getData("bic");
-
-	$bemerkung = getData("freieBemerkung");
-
-	$day1 = getData("day0");
-	$day2 = getData("day1");
-	$day3 = getData("day2");
-	$day4 = getData("day3");
-	$day5 = getData("day4");
-	$day6 = getData("day5");
-	$day7 = getData("day6");
-	$day8 = getData("day7");
-	$day9 = getData("day8");
-	$day10 = getData("day9");
-	$day11 = getData("day10");
-	$day12 = getData("day11");
-	$day13 = getData("day12");
-	$day14 = getData("day13");
-
-	$action = getData("action");
-
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$dateTime = date("Y-m-d H:i");
+			fclose($fp);
+		}
 
 
-	$header = 	"Kind;".
-				"Krankheit Nein;".
-				"Krankheit Ja;".
-				"Krankheit Info;".
-				"Allergie Nein;".
-				"Allergie Ja;".
-				"Allergie Info;".
-				"pflaster;". 
-				"pflasterAllergie;".
-				"bepanthen;".
-				"zecken;".
-				"zeckenArzt;".
-				"wespenstich;".
-				"spreisel;".
-				"tetanus;".
-				"Schwimmen Ja;".
-				"Schwimmen Nein;".
-				"Vegetarier Ja;".
-				"Veganer Ja;".
-				"Telefon Eltern;".
-				"Handy Eltern;".
-				"E-Mail Eltern;".
-				"Hinfahrt Ja;".
-				"Hinfahrt Plätze;".
-				"Rückfahrt Ja;".
-				"Rückfahrt Plätze;".
-				"Kontoinhaber;".
-				"Institut;".
-				"IBAN;".
-				"BIC;".
-				"Bemerkung;".
-				"Tag 1;".
-				"Tag 2;".
-				"Tag 3;".
-				"Tag 4;".
-				"Tag 5;".
-				"Tag 6;".
-				"Tag 7;".
-				"Tag 8;".
-				"Tag 9;".
-				"Tag 10;".
-				"Tag 11;".
-				"Tag 12;".
-				"Tag 13;".
-				"Tag 14;".
-				"Datum Anmeldung;".
-				"IP";
+		// Schritt 1: POST-Feldnamen validieren und neue Spalten ergänzen
+		foreach ($postData as $key => $value) {
 
+			// Feldname validieren
+			if (!preg_match('/^[a-zA-Z0-9_]{1,50}$/', $key)) {
+				continue;
+			}
 
-	$dataSet = 	$kind.";".
-				$illnessNo.";".
-				$illnessYes.";".
-				$illnessInfo.";".
-				$allergyNo.";".
-				$allergyYes.";".
-				$allergyInfo.";".
-				$pflaster.";".
-				$pflasterAllergie.";".
-				$bepanthen.";".
-				$zecken.";".
-				$zeckenArzt.";".
-				$wespenstich.";".
-				$spreisel.";".
-				$tetanus.";".
-				$swimNo.";".
-				$swimYes.";".
-				$vegetarian.";".
-				$vegan.";".
-				$phone.";".
-				$mobile.";".
-				$email.";".
-				$theretripYes.";".
-				$theretripCount.";".
-				$returntripYes.";".
-				$returntripCount.";".
-				$accountHolder.";".
-				$institute.";".
-				$iban.";".
-				$bic.";".
-				$bemerkung.";".
-				$day1.";". 
-				$day2.";". 
-				$day3.";". 
-				$day4.";". 
-				$day5.";". 
-				$day6.";". 
-				$day7.";". 
-				$day8.";". 
-				$day9.";". 
-				$day10.";".
-				$day11.";".
-				$day12.";".
-				$day13.";".
-				$day14.";".
-				$dateTime.";".
-				$ip;
+			// Neue Spalte anlegen
+			if (!in_array($key, $columns)) {
+				$columns[] = $key;
+
+				// Bestehende Zeilen erweitern
+				foreach ($rows as &$row) {
+					while (count($row) < count($columns)) {
+						$row[] = '';
+					}
+				}
+			}
+		}
+
+		// Schritt 2: Neue Zeile erzeugen
+		$newRow = [];
+
+		foreach ($columns as $col) {
+			if (isset($postData[$col])) {
+				$value = trim($postData[$col]);
+
+				// CSV-Formula-Injection verhindern
+				if (preg_match('/^[=\+\-@]/', $value)) {
+					$value = "'" . $value;
+				}
+
+				$newRow[] = $value;
+			} else {
+				$newRow[] = '';
+			}
+		}
+
+		// Schritt 3: CSV neu schreiben
+		$fp = fopen($csvFile, 'w');
+
+		// Header
+		fputcsv($fp, $columns, ';', '"', '\\');
+
+		// Bestehende Zeilen
+		foreach ($rows as $row) {
+			fputcsv($fp, $row, ';', '"', '\\');
+		}
+
+		// Neue Zeile
+		fputcsv($fp, $newRow, ';', '"', '\\');
+
+		fclose($fp);
+
+		return true;
+	}
+
+	// Das hier sind spezielle Variablen, die in jeder Anmeldung vorhanden sein sollten damit die E-Mail korrekt versendet werden kann.
+	$email = getData("EMail");
+	$kind = getData("Teilnehmer_Name");
+	$action = getData("Veranstaltung");
 
 	$confMail = "Hallo,<br><br> ".$kind." wurde erfolgreich zu ".$action." angemeldet. <br><br>Viele Grüße, das Rover und Leiter Team der Degginger Pfadis";
-
 	
 	$fileName = removeSpecialChars($action);
 
@@ -219,16 +145,7 @@
 	if ($fileName != "") {
 		$fileName = "data/".$fileName.".csv";
 
-		if (!file_exists($fileName)) {
-			$myfile = fopen($fileName, "a");
-			fwrite($myfile, $header."\n");
-		} else {
-			$myfile = fopen($fileName, "a");
-		}
-		
-		if ($myfile) {
-			fwrite($myfile, $dataSet."\n");
-			fclose($myfile);	
+		if (updateCsvWithPost($fileName, $_POST)) {
 			$success = sendConfirmationEmail($email, $confMail);
 		}
 	}

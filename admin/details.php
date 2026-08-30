@@ -13,6 +13,7 @@
 
 <?php
 $filename = $_GET['file'] ?? '';
+$line = $_GET['line'] ?? '';
 
 // Nur erlaubte Zeichen zulassen (Buchstaben, Zahlen, Unterstrich, Minus, Punkt)
 $filename = basename($filename); // Entfernt Pfade wie ../../
@@ -32,39 +33,44 @@ if ($fullPath === false || strpos($fullPath, $baseDir) !== 0) {
    die("Zugriff verweigert");
 }
 
-
+$line = intval($line);
 
 $csvDatei = $fullPath;
 
 if (($handle = fopen($csvDatei, "r")) !== false) {
-
-    echo "<table border='1' cellpadding='5' cellspacing='0'>";
-
-    $columns = [0, 21];
-
-
     
     if (($daten = fgetcsv($handle, 1000, ";", "\"", "\\")) !== false) {
-        echo "<tr>";
-        echo "<th></th>";
-        foreach ($daten as $wert) {
-            echo "<th>" . htmlspecialchars($wert) . "</th>";
-        }
-        echo "</tr>";       
+        $header = $daten;    
     }
     
     $i=1;
-    while (($daten = fgetcsv($handle, 1000, ";", "\"", "\\")) !== false) {
-        echo "<tr>";
-        echo "<td><a href=\"details.php?file=$filename&line=$i\">Details</a></td>";
-        foreach ($daten as $wert) {
-            echo "<td>" . htmlspecialchars($wert) . "</td>";
+    while (($daten = fgetcsv($handle, 1000, ";", "\"", "\\")) !== false && $i <= $line) {
+        if ($i == $line) {
+            $data = $daten;
         }
         $i++;
-        echo "</tr>";
+    }
+
+    if (!isset($data)) {
+        die("Eintrag nicht gefunden");
+    }
+
+    echo "<table border='1' cellpadding='5' cellspacing='0'>";
+
+    for ($j=0; $j<max(sizeof($header),sizeof($data)); $j++) {
+        $h = $header[$j] ?? "";
+        $d = $data[$j] ?? "";
+
+        if ($d !== "") {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($h) . "</td>";
+            echo "<td>" . nl2br(htmlspecialchars($d)) . "</td>";
+            echo "</tr>";
+        }
     }
 
     echo "</table>";
+    echo "<a href=\"view.php?file=$filename\">Zurück</a>";
 
     fclose($handle);
 } else {
