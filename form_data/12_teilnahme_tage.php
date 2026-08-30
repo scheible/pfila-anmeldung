@@ -17,6 +17,7 @@
      
         for ($i = 0; $i < $numberOfDays; $i++) {
             echo "<label class=\"checkbox\">";
+            echo "<input type=\"hidden\" name=\"Tag_$i\" value=\"\">";
             echo "<input type=\"checkbox\" id=\"day$i\" name=\"Tag_$i\" value=\"x\" checked=\"checked\">";
             $currentDate = strtotime($startDate."+$i day");
             echo date("d.m.Y (l)", $currentDate);
