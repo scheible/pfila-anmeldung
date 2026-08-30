@@ -93,10 +93,11 @@
 
 		<div class="formGroup">
 			<div class="groudHeading">Info</div>
-			<p>Die Angaben oben generieren einen Link, der alle Infos zur Aktion als Parameter an den Link anhängt.
-			Das Anmeldeformular wird immer dynamisch aus dem Link generiert. Das bedeutet, wenn man manuell einen Parameter im Link ändert, wird das Anmeldeformular entsprechend angezeigt. Jeder kann z.B. kosten=1%2C20 im Link eintragen und das Anmeldeformular wird dann 1,20 als Kosten anzeigen.</p>
-			<p>Nachdem die Daten aus dem Formular abgesendet werden, wandelt ein serverseitiges PHP Script den Aktionsname, z.B. <i>Pfila 2022</i>, in Kleinbuchstaben um und entfernt Sonder- und Leerzeichen, <i>pfila2022</i>. Das dient dann als Dateiname für die CSV Datei in welcher die Anmeldungen gespeichert werden. Falls im oberen Beispiel die Datei pfila2022.csv noch nicht vorhanden ist, wird sie erstellt und die erste Anmeldung dort eingetragen. Falls die Datei schon existiert, wird die Anmeldung als neue Zeile eingefügt. Die CSV Dateien können dann vom Orga-Team heruntergeladen und mit Excel geöffnet werden.</p>
-			<p>Der Aktionsname muss für die Anmeldungen für Kinder und Rover/Leiter gleich lauten, damit die Daten in der gleichen CSV Datei landen</p>
+			<p>Die CSV Dateien mit den Anmeldungen nur herunterladen wenn absolut notwendig!</p>
+			<p>Die CSV Datei nur lokal auf euren Geräten speichern. Nicht in Google Drive, Dropbox, Apple Cloud, One Drive oder andere Cloudanbieter hochladen. Auch beachten ob eure Geräte automatisch mit einer Cloud synchronisiert werden!</p>
+			<p>Bitte daran denken, dass ihr die CSV Datei von eurem Gerät wieder löscht, sobald ihr sie nicht mehr benötigt.</p>
+			<h3>Warum?</h3>
+			<p>Persönliche Daten (Gesundheitsdaten, Kontodaten) müssen laut Gesetz (DSGVO) wie oben beschrieben geschützt sein. Wenn wir dagegen verstoßen, könnten wir als Stamm oder die Vorstände persönlich dafür haftbar gemacht werden. Und das will keiner!</p>
 		</div>
 	</div>
 
