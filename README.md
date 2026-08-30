@@ -27,7 +27,11 @@ Die Datei _pfila-anmeldung/.htaccess_ erzwingt https, was in der Testumgebung ni
 Kopiere alle Dateien aus dem Repo in das Deploymentverzeichnis auf dem Webserver.
 
 ### Sicherheit und Zugriffskontrolle
-Die Datei `data/.htaccess` enthaelt eine Referenz auf die Datei `.htpassw`. Die Datei `.htpasswd` muss erstellt und mit Nutzernamen gefuellt werden. Dann muss die Referenz in `data/.htaccess` angepasst werden.
+Die `.htaccess` Dateien enthalten eine Referenz auf die Datei `.htpassw`. Die Datei `.htpasswd` ist nicht Teil des Repos und muss erstellt und mit Nutzernamen gefuellt werden. Folgender Inhalt kann lokal verwendet werden um einen Nutzer `admin` mit Passwort `admin` zu erzeugen
+
+```
+admin:$6$CKGzfFHCoeTztQqH$lBLRRe8XcGFlwYKUmyP0X7D0pgXlJyK4RHKBLavyR4JiQUkTeUVKwy2nQ8v1vQdHwjKJGiGwqSde707Yx0GNW1
+```
 
 ### CI/CD
 Automatisches Deployment ist eingerichtet auf Strato Webspace. Die Dateien `deploy.php` und `deploy.sh` sind nicht teil des Repos, muessen aber auf dem Webserver im Deploymentverzeichnis existieren. 
@@ -35,6 +39,15 @@ Automatisches Deployment ist eingerichtet auf Strato Webspace. Die Dateien `depl
 `deploy.php` kann nicht Teil des Repos sein, da es ein Secret enthaelt. 
 
 `deploy.sh` kann nicht teil des Repos sein, da die Datei ausfuehrbar sein muss und ein `git pull` diese Eigenschaft ueberschreiben wuerde.
+
+### Unterschiede Lokal/Server
+
+Folgende .htaccess Konfigurationsdateien sind Lokal und auf dem Server unterschiedlich:
+ * ./.htaccss
+ * admin/.htaccess
+ * data/.htaccess
+
+Im Repo existieren die `.htaccess` Dateien nicht. Stattdessen gibt es jeweils `.htaccess.local` und `.htaccess.server`. Das Script `deploy.sh` kopiert `.htaccess.server` in `.htaccess`. Lokal muss das für alle drei Dateien von Hand gemacht werden.
 
 
 ## Zeltlageranmeldung
