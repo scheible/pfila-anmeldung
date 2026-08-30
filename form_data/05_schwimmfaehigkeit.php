@@ -29,6 +29,8 @@
 
 <div class="formGroup" id="schwimmen">
     <div class="groudHeading">Kann <span class="nameKind">der Teilnehmer</span> ohne besondere Aufsicht schwimmen?</div>
+    
+    <input type="hidden" name="Schwimmer" value="Keine Angabe">
     <label class="radiobox">
         <input type="radio" name="Schwimmer" id="swimYes" value="Ja"/>Ja
     </label>

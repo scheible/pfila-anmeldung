@@ -31,6 +31,7 @@
 <div class="formGroup" id="krankheit">
     <div class="groudHeading">Besondere Krankheit, auf die zu achten, oder Medikamente, die regelmäßig einzunehmen sind?</div>
 
+    <input type="hidden" name="Besondere_Krankheit" value="Keine Angabe">
     <label class="radiobox">
         <input type="radio" name="Besondere_Krankheit" id="illnessNo" value="Nein"/> Nein
     </label>

@@ -33,6 +33,7 @@
 <div class="formGroup" id="allergien">
     <div class="groudHeading"><span class="nameKind">der Teilnehmer</span> hat Lebensmittelunverträglichkeiten oder Allergien</div>
 
+    <input type="hidden" name="Allergie" value="Keine Angabe">
     <label class="radiobox">
         <input type="radio" name="Allergie" id="allergyNo" value="Nein"/> Nein
     </label>

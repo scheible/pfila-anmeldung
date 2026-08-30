@@ -51,10 +51,12 @@
 	<div class="groudHeading">Ich kann fahren am</div>
 
 	<label class="checkbox">
+		<input type="hidden" name="Hinfahrt" value="">
 		<input type="checkbox" name="Hinfahrt" id="theretripYes" value="x"/> <?php echo $startDate; ?> Freie Plätze <input type="number" min="1" name="theretripCount" id="theretripCount">
 	</label>
 
 	<label class="checkbox">
+		<input type="hidden" name="Rückfahrt" value="">
 		<input type="checkbox" name="Rückfahrt" id="returntripYes" value="x"/> <?php echo $endDate; ?> Freie Plätze <input type="number" min="1" id="returntripCount">
 	</label>
 	<p>
